@@ -1,6 +1,9 @@
+#[cfg(feature = "termion")]
 pub mod termion;
-use std::io::Write;
+#[cfg(feature = "termion")]
+pub use self::termion::TermionBackend;
 
-pub enum Backend<W : Write> {
-    Termion(W),
+pub trait Backend : Clone {
+    fn write(&mut self, buf : &[u8]) -> std::io::Result<()>;
+    fn flush(&mut self, buf : &[u8]) -> std::io::Result<()>;
 }

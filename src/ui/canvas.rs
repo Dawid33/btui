@@ -11,6 +11,3 @@ impl Canvas {
         }
     }
 }
-impl super::widgets::Widget for Canvas {
-
-}

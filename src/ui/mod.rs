@@ -1,8 +1,12 @@
 mod canvas;
-pub use canvas::Canvas;
 mod rect;
-pub use rect::Rect;
-mod widgets;
+mod util;
+mod widget;
 
-mod prelude {
+mod text;
+
+pub mod prelude {
+    pub use super::canvas::Canvas;
+    pub use super::rect::Rect;
+    pub use super::widget::Widget;
 }

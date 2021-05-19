@@ -1,6 +1,7 @@
 use std::io::{self, Write};
-use crate::ui::Rect;
+use crate::ui::prelude::*;
 
+#[derive(Debug)]
 pub struct TermionBackend(std::io::Stdout);
 
 impl Clone for TermionBackend {

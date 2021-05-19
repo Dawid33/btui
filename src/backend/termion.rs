@@ -1,4 +1,5 @@
 use std::io::{self, Write};
+use crate::ui::Rect;
 
 pub struct TermionBackend(std::io::Stdout);
 
@@ -25,5 +26,13 @@ impl super::Backend for TermionBackend {
     fn write(&mut self, buf: &[u8]) -> std::io::Result<()> {
         let result = self.0.write_all(buf);
         result
+    }
+    fn flush(&mut self) -> std::io::Result<()> {
+        let result = self.0.flush();
+        result
+    }
+    fn size(&self) -> std::io::Result<Rect> {
+        let terminal = termion::terminal_size()?;
+        Ok(Rect::new(0, 0, terminal.0, terminal.1))
     }
 }

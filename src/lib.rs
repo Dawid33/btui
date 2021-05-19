@@ -1,5 +1,6 @@
 mod backend;
 mod terminal;
+mod ui;
 
 
 #[cfg(test)]

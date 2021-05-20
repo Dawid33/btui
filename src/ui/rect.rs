@@ -1,3 +1,4 @@
+#[derive(Clone)]
 pub struct Rect {
     width : u16,
     height : u16,

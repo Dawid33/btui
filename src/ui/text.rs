@@ -1,7 +1,6 @@
-pub struct Text {
-    content : String
-}
+use crate::ui::prelude::*;
 
-pub struct Style {
-    
+pub struct Text {
+    content : String,
+    style : Style,
 }
